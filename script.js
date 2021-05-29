@@ -27,7 +27,7 @@ function connections() {
   //   });
 
   zustaende.map((zustand) => {
-    ctx.fillStyle = "#489FB5"
+    ctx.fillStyle = "#FF6700"
     zustand.connect.map((connect) => {
       ctx.beginPath();
       ctx.arrow(
@@ -47,9 +47,9 @@ function labels() {
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   zustaende.map((zustand) => {
-    ctx.fillStyle = "#AEC3B0";
+    ctx.fillStyle = "#C0C0C0";
     ctx.fillRect(zustand.x - 30, zustand.y - 30, 60, 60);
-    ctx.fillStyle = "#01161E";
+    ctx.fillStyle = "#004E98";
     ctx.fillText(zustand.name, zustand.x, zustand.y);
   });
 }

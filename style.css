@@ -3,20 +3,20 @@
   padding: 0 !important;
   box-sizing: border-box;
   font-family: "Lexend Deca", sans-serif;
-  background-color: #EFF6E0;
+  background-color: #EBEBEB;
 }
 
 canvas {
-  border: 5px solid #124559;
+  border: 5px solid #FF6700;
 }
 
 .title {
   font-size: 2em;
   height: 75px;
-  color: #01161E;
+  color: #3A6EA5;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  background-color: #AEC3B0;
+  background-color: #C0C0C0;
 }

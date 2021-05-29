@@ -13,3 +13,13 @@ Automatically created and optimized statecharts.
 &emsp;},\
 &emsp;...\
 ]
+
+## Color Theme
+
+https://coolors.co/ff6700-ebebeb-c0c0c0-3a6ea5-004e98
+
+- Background: `#EBEBEB`
+- Light: `#C0C0C0`
+- Dark: `#004E98`
+- Medium: `#3A6EA5`
+- Highlight: `#FF6700`
