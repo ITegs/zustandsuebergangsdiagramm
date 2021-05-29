@@ -2,19 +2,21 @@
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
-  font-family: "VT323", monospace;
-  background-color: #8ecae6;
+  font-family: "Lexend Deca", sans-serif;
+  background-color: #EFF6E0;
 }
 
 canvas {
-  border: 5px solid #ffb703;
+  border: 5px solid #124559;
 }
 
 .title {
-  font-size: 3em;
+  font-size: 2em;
   height: 75px;
-  color: #023047;
-  padding: 0.5em;
+  color: #01161E;
+  display: flex;
   text-align: center;
-  background-color: #219ebc;
+  justify-content: center;
+  align-items: center;
+  background-color: #AEC3B0;
 }
