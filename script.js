@@ -35,13 +35,67 @@ function connections() {
 }
 
 function labels() {
-  ctx.font = "25px Lexend Deca";
+  ctx.font = "20px Lexend Deca";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   zustaende.map((zustand) => {
     ctx.fillStyle = "#C0C0C0";
-    ctx.fillRect(zustand.x - zustand.name.length*17/2, zustand.y - 23, zustand.name.length*17, 46);
+    ctx.fillRect(
+      zustand.x - (zustand.name.length * 17) / 2,
+      zustand.y - 23,
+      zustand.name.length * 17,
+      46
+    );
     ctx.fillStyle = "#004E98";
     ctx.fillText(zustand.name, zustand.x, zustand.y);
   });
+}
+
+function addZustand() {
+  var name = document.getElementById("name").value;
+  var x =
+    Math.floor(
+      Math.random() * (window.innerWidth - 100 - (window.innerWidth - 50) + 1)
+    ) +
+    (window.innerWidth - 50);
+  var y =
+    Math.floor(
+      Math.random() * (window.innerHeight - 180 - (window.innerHeight - 90) + 1)
+    ) +
+    (window.innerHeight - 90);
+  var connect = [];
+  for (var i = 1; i <= numSelect; i++) {
+    connect.push(parseInt(document.getElementById("select" + i).value));
+  }
+
+  zustaende.push({ name, x, y, connect });
+  draw();
+}
+
+function zusaendeSelect(num) {
+  var defaultValue = document.createElement("option");
+  defaultValue.text = "Verbunden mit:";
+  defaultValue.selected;
+  document.querySelector("#select" + num).add(defaultValue, null);
+
+  zustaende.map((zustand) => {
+    var option = document.createElement("option");
+    option.text = zustand.name;
+    for (var i = 0; i < zustaende.length; i++) {
+      if (zustaende[i].name == zustand.name) {
+        option.value = i;
+      }
+    }
+
+    document.querySelector("#select" + num).add(option, null);
+  });
+}
+
+var numSelect = 1;
+function addSelect() {
+  var select = document.createElement("select");
+  select.id = "select" + (numSelect + 1);
+  document.querySelector("#selectConnections").appendChild(select, null);
+  zusaendeSelect(numSelect + 1);
+  numSelect++;
 }

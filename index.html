@@ -11,8 +11,23 @@
     <title>Zustandsübergangsdigramm</title>
   </head>
   <body>
+    <div id="overlay">
+      <button>&times;</button>
+
+      <div class="overlay-content">
+        <input type="text" value="Name des Zustands" id="name" />
+        <div id="selectConnections">
+          <button onclick="addSelect()">+</button>
+          <select id="select1"></select>
+        </div>
+        <button onclick="addZustand()">➕</button>
+      </div>
+    </div>
+
     <div class="title">Zustandsübergangsdigramm-Generator</div>
-    <div class="add"><button>➕</button></div>
+    <div class="openOverlay">
+      <button onclick="zusaendeSelect(1)">➕</button>
+    </div>
     <canvas id="canvas"> Ihr Browser unsterstützt das Programm nicht. </canvas>
   </body>
   <script src="https://frogcat.github.io/canvas-arrow/canvas-arrow.js"></script>
