@@ -20,16 +20,63 @@ canvas {
   background-color: #c0c0c0;
 }
 
-.add {
-    height: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #c0c0c0;
+.openOverlay {
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #c0c0c0;
 }
 
-.add button {
-    font-size: 1.3em;
-    border: none;
-    background-color: #c0c0c0;
+.openOverlay button {
+  font-size: 1.3em;
+  background-color: #c0c0c0;
+  text-align: center;
+  border: none;
+}
+
+#overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#overlay * {
+  border: none;
+  color: #818181;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#overlay .closeOverlay {
+  align-self: flex-start;
+  font-size: 4em;
+}
+
+#overlay .overlay-content input {
+  border: solid #ff6700;
+  font-size: 2em;
+}
+
+#overlay .overlay-content #selectConnections button {
+  font-size: 2em;
+}
+
+#overlay .overlay-content #selectConnections select {
+  border: solid #ff6700;
+  font-size: 1.5em;
+}
+
+#overlay .addZustand {
+  align-self: flex-end;
+  font-size: 2em;
 }

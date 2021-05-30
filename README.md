@@ -27,3 +27,4 @@ https://coolors.co/ff6700-ebebeb-c0c0c0-3a6ea5-004e98
 ## TODO:
 
 * random x-y values must be in the canvas area
+* default selector fills multiple times

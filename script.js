@@ -27,7 +27,7 @@ function connections() {
         zustand.y,
         zustaende[connect].x,
         zustaende[connect].y,
-        [1, 10, -1, 0, 0, 0]
+        [1, 7, -1, 0, 0, 0]
       );
       ctx.fill();
     });
@@ -54,15 +54,11 @@ function labels() {
 function addZustand() {
   var name = document.getElementById("name").value;
   var x =
-    Math.floor(
-      Math.random() * (window.innerWidth - 100 - (window.innerWidth - 50) + 1)
-    ) +
-    (window.innerWidth - 50);
+    Math.floor(Math.random() * (30 - (window.innerWidth - 30) + 1)) +
+    (window.innerWidth - 30);
   var y =
-    Math.floor(
-      Math.random() * (window.innerHeight - 180 - (window.innerHeight - 90) + 1)
-    ) +
-    (window.innerHeight - 90);
+    Math.floor(Math.random() * (110 - (window.innerHeight - 30) + 1)) +
+    (window.innerHeight - 30);
   var connect = [];
   for (var i = 1; i <= numSelect; i++) {
     connect.push(parseInt(document.getElementById("select" + i).value));
@@ -98,4 +94,19 @@ function addSelect() {
   document.querySelector("#selectConnections").appendChild(select, null);
   zusaendeSelect(numSelect + 1);
   numSelect++;
+}
+
+function openOverlay() {
+  zusaendeSelect(1);
+  document.getElementById("overlay").style.width = "100%";
+}
+
+function closeOverlay() {
+  document.getElementById("overlay").style.width = "0%";
+  for (var i = numSelect; i > 1; i--) {
+    var select = document.getElementById("select" + i);
+    select.remove();
+  }
+  numSelect = 1;
+  document.getElementById("name").value = "";
 }

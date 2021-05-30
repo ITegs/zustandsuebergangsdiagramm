@@ -12,21 +12,22 @@
   </head>
   <body>
     <div id="overlay">
-      <button>&times;</button>
+      <button class="closeOverlay" onclick="closeOverlay()">&times;</button>
 
       <div class="overlay-content">
-        <input type="text" value="Name des Zustands" id="name" />
+        <input type="text" placeholder="Name des Zustands" id="name" />
         <div id="selectConnections">
           <button onclick="addSelect()">+</button>
+          <br />
           <select id="select1"></select>
         </div>
-        <button onclick="addZustand()">➕</button>
       </div>
+      <button class="addZustand" onclick="addZustand()">➕</button>
     </div>
 
     <div class="title">Zustandsübergangsdigramm-Generator</div>
     <div class="openOverlay">
-      <button onclick="zusaendeSelect(1)">➕</button>
+      <button onclick="openOverlay()">➕</button>
     </div>
     <canvas id="canvas"> Ihr Browser unsterstützt das Programm nicht. </canvas>
   </body>
